@@ -1,5 +1,6 @@
 <?php 
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PropertyController;
 
-Route::get('profile', fn() => view('agentprofile'))->name('profile');
+Route::get('profile', fn () => view('agentProfile'))->name('profile');

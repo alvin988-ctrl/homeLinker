@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PasswordController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Laravel\SerializableClosure\Serializers\Signed;
 
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('google.redirect');
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
