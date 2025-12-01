@@ -46,6 +46,32 @@
                 <p class="text-red-500 text-sm mt-1">{{$message}}</p>
             @enderror
 
+            <div class="relative flex items-center mt-6">
+    <span class="absolute">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500" 
+             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" 
+                d="M3 5a2 2 0 012-2h1.28a2 2 0 011.94 1.45l.58 2.32a2 2 0 01-.45 1.79l-1.1 1.1a11 11 0 005.66 5.66l1.1-1.1a2 2 0 011.79-.45l2.32.58A2 2 0 0121 17.72V19a2 2 0 01-2 2h-1C9.82 21 3 14.18 3 6V5z" />
+        </svg>
+    </span>
+
+    <input 
+        name="phone" 
+        id="phone" 
+        type="text" 
+        class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 
+               dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 
+               focus:border-blue-400 dark:focus:border-blue-300 
+               focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" 
+        placeholder="Phone number">
+</div>
+
+@error('phone')
+    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+@enderror
+
+
        <div class="relative flex items-center mt-4">
     <span class="absolute left-0 pl-3">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

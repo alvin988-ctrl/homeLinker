@@ -18,6 +18,7 @@ trait Register {
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|unique:users,email',
+            'phone' => 'required|digits_between:10,20',
             'password' => 'required|min:8',
         ]);
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Property;
 
 use App\Models\Property;
+use App\Models\User;
 
 trait IndexTrait {
 
@@ -27,5 +28,9 @@ trait IndexTrait {
     {
         $property = Property::findOrFail($id);
         return view('cardviewGuest', compact('property'));
+    }
+
+    public function agentContact (){
+      return view('agentContact');
     }
 }
