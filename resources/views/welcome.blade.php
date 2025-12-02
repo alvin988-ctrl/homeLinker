@@ -127,7 +127,7 @@
 </div>
 
 
-<div>
+<div class="mt-6">
   {{$properties->links()}}
 </div>
 
