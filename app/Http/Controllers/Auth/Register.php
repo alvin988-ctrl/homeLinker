@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 
 trait Register {
       public function showRegisterForm()
@@ -22,10 +24,17 @@ trait Register {
             'password' => 'required|min:8',
         ]);
 
-        $data['password'] = Hash::make($data['password']);
+        $user = User::create([
+            "name" => $data['name'],
+            "email" => $data['email'],
+            "phone" => $data['phone'],
+            "password" => Hash::make($data['password'])
+        ]);
 
-        User::create($data);
-        event(new Registered($data));   
-         return redirect()->route('login.post');
+        event(new Registered($user));
+        $user->SendEmailVerificationNotification();
+         
+        Auth::login($user);
+         return redirect()->route('emailVerify');
     }
 }
