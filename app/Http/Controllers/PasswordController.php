@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Auth\ForgetPassword;
+
+use Symfony\Component\CssSelector\Node\FunctionNode;
 
 class PasswordController extends Controller
 {
-    use ForgetPassword;
+  public function resetNewPassword(string $token) {
+        return view('resetPassword', ['token'=>$token]);
+  }
 }

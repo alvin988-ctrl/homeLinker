@@ -16,7 +16,7 @@
         <p class="text-red-600 mb-4">{{ $errors->first() }}</p>
     @endif
 
-    <form action="{{ route('forget-password.send') }}" method="POST" class="space-y-4">
+    <form action="{{route('password.email')}}" method="POST" class="space-y-4">
         @csrf
         <label class="block">
             <span class="text-sm font-medium text-gray-700">Email address</span>

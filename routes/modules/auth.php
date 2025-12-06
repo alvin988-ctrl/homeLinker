@@ -7,6 +7,7 @@ use App\Http\Controllers\PasswordController;
 use Laravel\SerializableClosure\Serializers\Signed;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
+
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('google.redirect');
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
 
@@ -32,9 +33,6 @@ Route::get('/email/verification-notification', function (Request $request){
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 
-
-Route::get('/forget-password', [PasswordController::class, 'forgetpassword'])->name('forget-password');
-Route::post('/forget-password', [PasswordController::class, 'sendResetLink'])->name('forget-password.send');
 
 
 Route::get('/reset-password/{token}', [PasswordController::class, 'resetNewpassword'])->name('password.reset');

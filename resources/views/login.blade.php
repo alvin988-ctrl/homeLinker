@@ -65,7 +65,7 @@
 
 
                             <div class="flex items-center justify-between mt-4">
-                                <a href="{{route('forget-password')}}" class="text-sm text-gray-600 dark:text-gray-200 hover:underline">Forget Password?</a>
+                                <a href="{{route('forgot-password')}}" class="text-sm text-gray-600 dark:text-gray-200 hover:underline">Forget Password?</a>
 
                                 <button type="submit" class="px-6 py-2 font-medium text-white transition-colors duration-300 transform bg-gray-900 rounded-md hover:bg-gray-800 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-800 dark:focus:bg-gray-700">Sign In</button>
                             </div>
